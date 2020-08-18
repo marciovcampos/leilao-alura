@@ -24,7 +24,14 @@ class Leilao {
         
         guard let listaDeLances = lances else { return }
         
-        if listaDeLances.count == 0 || ultimoLance(listaDeLances).usuario != lance.usuario {
+        var total = 0
+        for lanceAtual in listaDeLances {
+            if lanceAtual.usuario == lance.usuario {
+                total+=1
+            }
+        }
+        
+        if listaDeLances.count == 0 || ultimoLance(listaDeLances).usuario != lance.usuario && total < 5 {
              lances?.append(lance)
         }
        

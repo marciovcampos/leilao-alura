@@ -61,5 +61,34 @@ class LeilaoTests: XCTestCase {
          XCTAssertEqual(2000.0, leilao.lances?.first?.valor)
     }
     
+    func testDeveIgnorarMaisDoQue5LancesDoMesmoUsuario() {
+        let leilao = Leilao(descricao: "Macbook Pro 15")
+                            
+        let steveJobs = Usuario(nome: "Steve Jobs")
+        let billGates = Usuario(nome: "Bill Gates")
+        
+        leilao.propoe(lance: Lance(steveJobs, 2000.0))
+        leilao.propoe(lance: Lance(billGates, 3000.0))
+        
+        leilao.propoe(lance: Lance(steveJobs, 4000.0))
+        leilao.propoe(lance: Lance(billGates, 5000.0))
+        
+        leilao.propoe(lance: Lance(steveJobs, 6000.0))
+        leilao.propoe(lance: Lance(billGates, 7000.0))
+        
+        leilao.propoe(lance: Lance(steveJobs, 8000.0))
+        leilao.propoe(lance: Lance(billGates, 9000.0))
+        
+        leilao.propoe(lance: Lance(steveJobs, 10000.0))
+        leilao.propoe(lance: Lance(billGates, 11000.0))
+        
+        // deve ignorar
+        leilao.propoe(lance: Lance(steveJobs, 12000.0))
+ 
+        XCTAssertEqual(10, leilao.lances?.count)
+        XCTAssertEqual(11000.0, leilao.lances?.last?.valor)
+        
+    }
+    
     
 }
