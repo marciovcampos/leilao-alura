@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ErroAvaliador: Error {
+enum ErroAvaliador:Error {
     case LeilaoSemLance(String)
 }
 
@@ -25,7 +25,6 @@ class Avaliador {
         }
         
         guard let lances = leilao.lances else { return }
-        
         for lance in lances {
             if lance.valor > maiorDeTodos {
                 maiorDeTodos = lance.valor
@@ -49,15 +48,14 @@ class Avaliador {
         return maiores
     }
     
-    private func pegaOsMaioresLancesNoLeilao(_ leilao: Leilao) {
+    private func pegaOsMaioresLancesNoLeilao(_ leilao:Leilao) {
         guard let lances = leilao.lances else { return }
-        maiores =  lances.sorted(by: { (lista1, lista2) -> Bool in
+        maiores = lances.sorted(by: { (lista1, lista2) -> Bool in
             return lista1.valor > lista2.valor
         })
         
         let maioresLances = maiores.prefix(3)
-        maiores = Array(maioresLances)
         
+        maiores = Array(maioresLances)
     }
-    
 }
