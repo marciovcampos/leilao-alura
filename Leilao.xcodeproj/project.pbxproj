@@ -19,6 +19,7 @@
 		03FA4B27209353CB0047D61B /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA4B26209353CB0047D61B /* Usuario.swift */; };
 		03FA4B29209354F50047D61B /* Leilao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA4B28209354F50047D61B /* Leilao.swift */; };
 		800619AF24EC8548002692E3 /* AvaliadorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800619AE24EC8548002692E3 /* AvaliadorTests.swift */; };
+		80CA64C624ED99EE00DB324B /* CriadorDeLeilao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA64C524ED99EE00DB324B /* CriadorDeLeilao.swift */; };
 		A23F5A0F209CA483000E6525 /* Avaliador.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F5A0E209CA483000E6525 /* Avaliador.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		03FA4B26209353CB0047D61B /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		03FA4B28209354F50047D61B /* Leilao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leilao.swift; sourceTree = "<group>"; };
 		800619AE24EC8548002692E3 /* AvaliadorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliadorTests.swift; sourceTree = "<group>"; };
+		80CA64C524ED99EE00DB324B /* CriadorDeLeilao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriadorDeLeilao.swift; sourceTree = "<group>"; };
 		A23F5A0E209CA483000E6525 /* Avaliador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avaliador.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 				03FA4B26209353CB0047D61B /* Usuario.swift */,
 				03FA4B28209354F50047D61B /* Leilao.swift */,
 				A23F5A0E209CA483000E6525 /* Avaliador.swift */,
+				80CA64C524ED99EE00DB324B /* CriadorDeLeilao.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				03FA4AF3209353270047D61B /* ViewController.swift in Sources */,
 				03FA4B25209353AF0047D61B /* Lance.swift in Sources */,
 				03FA4AF1209353270047D61B /* AppDelegate.swift in Sources */,
+				80CA64C624ED99EE00DB324B /* CriadorDeLeilao.swift in Sources */,
 				03FA4B27209353CB0047D61B /* Usuario.swift in Sources */,
 				03FA4AF9209353270047D61B /* Leilao.xcdatamodeld in Sources */,
 				A23F5A0F209CA483000E6525 /* Avaliador.swift in Sources */,

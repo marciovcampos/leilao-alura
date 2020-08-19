@@ -11,18 +11,18 @@ import XCTest
 
 class AvaliadorTests: XCTestCase {
     
-    var leiloeiro:Avaliador
+    private var leiloeiro:Avaliador!
     private var joao:Usuario!
     private var maria:Usuario!
     private var jose:Usuario!
     
    override func setUp() {
-    super.setUp()
-    
-    joao = Usuario(nome: "Joao")
-    jose = Usuario(nome: "Jose")
-    maria = Usuario(nome: "Maria")
-    leiloeiro=Avaliador()
+        super.setUp()
+        
+        joao = Usuario(nome: "Joao")
+        jose = Usuario(nome: "Jose")
+        maria = Usuario(nome: "Maria")
+        leiloeiro=Avaliador()
     }
           
    override func tearDown() {
@@ -62,11 +62,13 @@ class AvaliadorTests: XCTestCase {
     }
     
     func testDeveEncontrarOsTresMaioresLances() {
-        let leilao = Leilao(descricao: "Playstation 4")
-        leilao.propoe(lance: Lance(joao, 300.0))
-        leilao.propoe(lance: Lance(maria, 400.0))
-        leilao.propoe(lance: Lance(joao, 500.0))
-        leilao.propoe(lance: Lance(maria, 600.0))
+               
+        let leilao = CriadorDeLeilao().para(descricao: "Playstation 4")
+            .lance(joao, 300.0)
+            .lance(maria, 400.0)
+            .lance(joao, 500.0)
+            .lance(maria, 600.0)
+            .constroi()
         
         leiloeiro.avalia(leilao: leilao)
         
