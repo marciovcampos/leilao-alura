@@ -10,9 +10,19 @@ import XCTest
 @testable import Leilao
 
 class AvaliadorTests: XCTestCase {
-
+    
+    var leiloeiro:Avaliador
+    private var joao:Usuario!
+    private var maria:Usuario!
+    private var jose:Usuario!
+    
    override func setUp() {
     super.setUp()
+    
+    joao = Usuario(nome: "Joao")
+    jose = Usuario(nome: "Jose")
+    maria = Usuario(nome: "Maria")
+    leiloeiro=Avaliador()
     }
           
    override func tearDown() {
@@ -21,19 +31,12 @@ class AvaliadorTests: XCTestCase {
     
     func testDeveEntenderLancesEmOrdemCrescente(){
         // Cenario
-             
-         let joao = Usuario(nome: "Joao")
-         let jose = Usuario(nome: "Jose")
-         let maria = Usuario(nome: "Maria")
-         
          let leilao = Leilao(descricao: "Playstation 4")
          leilao.propoe(lance: Lance(maria, 250.0))
          leilao.propoe(lance: Lance(joao, 300.0))
          leilao.propoe(lance: Lance(jose, 400.0))
          
          // Acao
-         
-         let leiloeiro = Avaliador()
          leiloeiro.avalia(leilao: leilao)
          
          // Validacao
@@ -46,14 +49,10 @@ class AvaliadorTests: XCTestCase {
     
     func testDeveEntenderLeilaoComApenasUmLance(){
         // Cenario
-             
-         let joao = Usuario(nome: "Joao")
          let leilao = Leilao(descricao: "Playstation 4")
         leilao.propoe(lance: Lance(joao, 1000))
          
          // Acao
-         
-         let leiloeiro = Avaliador()
          leiloeiro.avalia(leilao: leilao)
          
          // Validacao
@@ -63,16 +62,12 @@ class AvaliadorTests: XCTestCase {
     }
     
     func testDeveEncontrarOsTresMaioresLances() {
-        let joao = Usuario(nome: "Joao")
-        let maria = Usuario(nome: "Maria")
-        
         let leilao = Leilao(descricao: "Playstation 4")
         leilao.propoe(lance: Lance(joao, 300.0))
         leilao.propoe(lance: Lance(maria, 400.0))
         leilao.propoe(lance: Lance(joao, 500.0))
         leilao.propoe(lance: Lance(maria, 600.0))
         
-        let leiloeiro = Avaliador()
         leiloeiro.avalia(leilao: leilao)
         
         let listaLances = leiloeiro.tresMaiores()
