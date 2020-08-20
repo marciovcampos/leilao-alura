@@ -11,9 +11,13 @@ import XCTest
 import Cuckoo
 
 class EncerradorDeLeilaoTests: XCTestCase {
+    
+    var formatador: DateFormatter!
 
     override func setUp() {
         super.setUp()
+        formatador = DateFormatter()
+        formatador.dateFormat = "yyyy/MM/dd"
     }
 
     override func tearDown() {
@@ -21,9 +25,6 @@ class EncerradorDeLeilaoTests: XCTestCase {
     }
     
     func testDeveEncerrarLeiloesQueComecaramUmaSemanaAntes(){
-        
-        let formatador = DateFormatter()
-        formatador.dateFormat = "yyyy/MM/dd"
         guard let dataAntiga = formatador.date(from: "2018/05/09") else { return }
         
         let tvLed = CriadorDeLeilao().para(descricao: "TV Led").naData(data: dataAntiga).constroi()
@@ -39,9 +40,7 @@ class EncerradorDeLeilaoTests: XCTestCase {
 
         let encerradoDeLeilao = EncerradorDeLeilao(daoFalso)
         encerradoDeLeilao.encerra()
-        
-        let leiloesEncerrados = daoFalso.encerrados()
-        
+                
         guard let statusTvLed = tvLed.isEncerrado() else { return }
         guard let statusGeladeira = geladeira.isEncerrado() else { return }
                 
@@ -50,7 +49,28 @@ class EncerradorDeLeilaoTests: XCTestCase {
         XCTAssertTrue(statusGeladeira)
                 
     }
+    
+    func testDeveAtualizarLeiloesEncerrados(){
+        
+        guard let dataAntiga = formatador.date(from: "2018/05/19") else { return }
+        let tvLed = CriadorDeLeilao().para(descricao: "TV Led").naData(data: dataAntiga).constroi()
+        
+        let daoFalso = MockLeilaoDao().withEnabledSuperclassSpy()
+        
+        stub(daoFalso) { (daoFalso) in
+            when(daoFalso.correntes()).thenReturn([tvLed])
+        }
+        
+        let encerradoDeLeilao = EncerradorDeLeilao(daoFalso)
+        encerradoDeLeilao.encerra()
+        
+        verify(daoFalso).atualiza(leilao: tvLed)
+        
+    }
+}
 
-   
-
+extension Leilao : Matchable {
+    public var matcher: ParameterMatcher<Leilao> {
+        return equal(to: self)
+    }
 }
