@@ -25,6 +25,9 @@
 		12095EF219B68ED2FE453D07 /* Pods_Leilao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7679825DD9B90D041BCA0EFF /* Pods_Leilao.framework */; };
 		8045487524EEBDE600B8BC9F /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045487424EEBDE600B8BC9F /* GeneratedMocks.swift */; };
 		8045487724EECB6D00B8BC9F /* Carteiro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045487624EECB6D00B8BC9F /* Carteiro.swift */; };
+		8045487924EEF32300B8BC9F /* Pagamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045487824EEF32300B8BC9F /* Pagamento.swift */; };
+		8045487B24EEF58400B8BC9F /* RepositorioDePagamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045487A24EEF58400B8BC9F /* RepositorioDePagamento.swift */; };
+		8045487D24EEF5BF00B8BC9F /* GeradorDePagamento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045487C24EEF5BF00B8BC9F /* GeradorDePagamento.swift */; };
 		80CA64C824EDAA1C00DB324B /* EncerradorDeLeilaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA64C724EDAA1C00DB324B /* EncerradorDeLeilaoTests.swift */; };
 		A23F5A0F209CA483000E6525 /* Avaliador.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F5A0E209CA483000E6525 /* Avaliador.swift */; };
 		A23F5A11209CD8FA000E6525 /* AvaliadorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23F5A10209CD8FA000E6525 /* AvaliadorTests.swift */; };
@@ -81,6 +84,9 @@
 		7A02B7555041DD36E6C17E51 /* Pods-Leilao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leilao.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Leilao/Pods-Leilao.debug.xcconfig"; sourceTree = "<group>"; };
 		8045487424EEBDE600B8BC9F /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		8045487624EECB6D00B8BC9F /* Carteiro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carteiro.swift; sourceTree = "<group>"; };
+		8045487824EEF32300B8BC9F /* Pagamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagamento.swift; sourceTree = "<group>"; };
+		8045487A24EEF58400B8BC9F /* RepositorioDePagamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorioDePagamento.swift; sourceTree = "<group>"; };
+		8045487C24EEF5BF00B8BC9F /* GeradorDePagamento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeradorDePagamento.swift; sourceTree = "<group>"; };
 		80CA64C724EDAA1C00DB324B /* EncerradorDeLeilaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncerradorDeLeilaoTests.swift; sourceTree = "<group>"; };
 		96B13E362E12E632B3A49E78 /* Pods-Leilao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leilao.release.xcconfig"; path = "Pods/Target Support Files/Pods-Leilao/Pods-Leilao.release.xcconfig"; sourceTree = "<group>"; };
 		A23F5A0E209CA483000E6525 /* Avaliador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avaliador.swift; sourceTree = "<group>"; };
@@ -206,6 +212,9 @@
 				A26FBA9320A32DE60090FC1F /* CriadorDeLeilao.swift */,
 				038136CA20B48B5F005FEDD7 /* EncerradorDeLeilao.swift */,
 				8045487624EECB6D00B8BC9F /* Carteiro.swift */,
+				8045487824EEF32300B8BC9F /* Pagamento.swift */,
+				8045487A24EEF58400B8BC9F /* RepositorioDePagamento.swift */,
+				8045487C24EEF5BF00B8BC9F /* GeradorDePagamento.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -475,11 +484,14 @@
 				03FA4B25209353AF0047D61B /* Lance.swift in Sources */,
 				038136CB20B48B5F005FEDD7 /* EncerradorDeLeilao.swift in Sources */,
 				03FA4AF1209353270047D61B /* AppDelegate.swift in Sources */,
+				8045487B24EEF58400B8BC9F /* RepositorioDePagamento.swift in Sources */,
 				A26FBA9420A32DE60090FC1F /* CriadorDeLeilao.swift in Sources */,
 				8045487724EECB6D00B8BC9F /* Carteiro.swift in Sources */,
 				03FA4B27209353CB0047D61B /* Usuario.swift in Sources */,
 				03FA4AF9209353270047D61B /* Leilao.xcdatamodeld in Sources */,
+				8045487D24EEF5BF00B8BC9F /* GeradorDePagamento.swift in Sources */,
 				A23F5A0F209CA483000E6525 /* Avaliador.swift in Sources */,
+				8045487924EEF32300B8BC9F /* Pagamento.swift in Sources */,
 				038136C720B48AD8005FEDD7 /* FormatadorData.swift in Sources */,
 				03FA4B29209354F50047D61B /* Leilao.swift in Sources */,
 			);
