@@ -22,7 +22,7 @@ class Pagamento {
         return valor
     }
     
-    fung getData() -> Date {
+    func getData() -> Date {
         return data
     }
     

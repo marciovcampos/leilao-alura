@@ -14,7 +14,7 @@ class GeradorDePagamento {
     private var avaliador:Avaliador
     private var repositorioDePagamento:RepositorioDePagamento
     
-    init(_ leiloes:LeilaoDao, _ avaliador: Avaliador, repositorioDePagamento: RepositorioDePagamento){
+    init(_ leiloes:LeilaoDao, _ avaliador: Avaliador,_ repositorioDePagamento: RepositorioDePagamento){
         self.leiloes = leiloes
         self.avaliador = avaliador
         self.repositorioDePagamento = repositorioDePagamento
