@@ -30,12 +30,8 @@ class GeradorDePagamentoTests: XCTestCase {
             when(daoFalso.encerrados()).thenReturn([playstation])
         }
         
-        let avaliadorFalso = MockAvaliador().withEnabledSuperclassSpy()
-        
-        stub(avaliadorFalso) { (avaliadorFalso) in
-            when(avaliadorFalso.maiorLance()).thenReturn(2500.0)
-        }
-        
+        let avaliadorFalso = Avaliador()
+                
         let pagamentos = MockRepositorioDePagamento().withEnabledSuperclassSpy()
         
         let geradorDePagamento = GeradorDePagamento(daoFalso, avaliadorFalso, pagamentos)
