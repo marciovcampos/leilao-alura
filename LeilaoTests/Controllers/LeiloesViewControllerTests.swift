@@ -12,9 +12,13 @@ import XCTest
 class LeiloesViewControllerTests: XCTestCase {
     
     var sut:LeiloesViewController!
+    var tableView: UITableView!
 
     override func setUp() {
          sut = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "home") as! LeiloesViewController
+        _ = sut.view
+        tableView = sut.tableView
+        tableView.dataSource = sut
     }
 
     override func tearDown() {
@@ -34,15 +38,26 @@ class LeiloesViewControllerTests: XCTestCase {
     }
     
     func testNumberOfRowsInSectionDeveSerQuantidadeDeLeiloesDaLista(){
-        let tableView = UITableView()
+        
         tableView.dataSource = sut
         
         sut.addLeilao(Leilao(descricao: "Playstation 4"))
         XCTAssertEqual(tableView.numberOfRows(inSection: 0), 1)
         
         sut.addLeilao(Leilao(descricao: "Iphone 11"))
-        tableView.reloadData()        
+        tableView.reloadData()
         XCTAssertEqual(tableView.numberOfRows(inSection: 0), 2)
+        
+    }
+    
+    func testCellForRowDeveRetornarLeilaoTableViewCell(){
+        sut.addLeilao(Leilao(descricao: "TV Led"))
+        
+        tableView.reloadData()
+        
+        let celula = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        
+        XCTAssertTrue(celula is LeilaoTableViewCell)
         
     }
   
