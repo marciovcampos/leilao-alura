@@ -31,7 +31,8 @@ class LeiloesViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return LeilaoTableViewCell()
+        let celulaLeilao = tableView.dequeueReusableCell(withIdentifier: "LeilaoTableViewCell", for: indexPath)
+        return celulaLeilao
     }
     
     // MARK: - Metodos
