@@ -15,6 +15,11 @@ class LeiloesViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    // MARK: - Atributos
+    
+    private var listaDeLeiloes:[Leilao] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,11 +27,17 @@ class LeiloesViewController: UIViewController, UITableViewDataSource {
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 0
+        return listaDeLeiloes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
+    }
+    
+    // MARK: - Metodos
+    
+    func addLeilao(_ leilao:Leilao){
+        listaDeLeiloes.append(leilao)
     }
     
       

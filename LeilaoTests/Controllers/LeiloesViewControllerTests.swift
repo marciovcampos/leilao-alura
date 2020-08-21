@@ -32,6 +32,19 @@ class LeiloesViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.tableView.dataSource)
         XCTAssertNotNil(sut.tableView.dataSource is LeiloesViewController)
     }
+    
+    func testNumberOfRowsInSectionDeveSerQuantidadeDeLeiloesDaLista(){
+        let tableView = UITableView()
+        tableView.dataSource = sut
+        
+        sut.addLeilao(Leilao(descricao: "Playstation 4"))
+        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 1)
+        
+        sut.addLeilao(Leilao(descricao: "Iphone 11"))
+        tableView.reloadData()        
+        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 2)
+        
+    }
   
 
 }
